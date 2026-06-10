@@ -3,13 +3,13 @@ const User=require("../Models/UserModel");
 const SignupUser= async(req,res)=>{
     try{
         const {firstname,lastname,email,phone,password}= req.body;
-        const NewUser = new User{{
+        const NewUser = new User({
             firstname,
             lastname,
             email,
             phone,
             password
-        }};
+        });
 
         const SavedUser = await NewUser.save();
         res.status(200).json({
